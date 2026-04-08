@@ -1,0 +1,460 @@
+/*! ========================================
+    1CHAN BLUE THEME
+    Синий форум в стиле 4chan
+    ======================================== */
+
+/* ---------- YUI RESET ---------- */
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend,
+input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+legend {
+  color: #000;
+}
+
+/* ---------- БАЗОВЫЕ НАСТРОЙКИ ---------- */
+body {
+  font: 13px/1.231 arial, helvetica, clean, sans-serif;
+  *font-size: small;
+  *font: x-small;
+  text-align: center;
+  background: #eef5ff;
+  color: #1a3a6b;
+}
+
+html {
+  background: #eef5ff;
+}
+
+/* ---------- ТИПОГРАФИКА ---------- */
+h1 {
+  font-family: Tahoma, Bitstream Vera Sans, sans-serif;
+  font-size: 197%;
+  font-weight: bold;
+  color: #1a3a6b;
+}
+
+h2 {
+  font-size: 131%;
+  font-weight: bold;
+  color: #1a3a6b;
+}
+
+h3 {
+  font-size: 100%;
+  font-weight: bold;
+  color: #1a3a6b;
+}
+
+a {
+  color: #1a3a6b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #4a6a9b;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ---------- СТРУКТУРА ДОКУМЕНТА ---------- */
+#doc, #doc2, #doc3, #doc4 {
+  margin: auto;
+  text-align: left;
+  width: 57.69em;
+  *width: 56.301em;
+  min-width: 750px;
+}
+
+#ft {
+  clear: both;
+}
+
+br.clear-bug {
+  height: 0;
+  line-height: 0;
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ---------- ШАПКА И ЛОГОТИП ---------- */
+#hd {
+  margin-bottom: 0;
+}
+
+#logo-fp {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo-1chan {
+  display: inline-block;
+  background: linear-gradient(135deg, #1a3a6b 0%, #2a5a9b 100%);
+  color: #fff;
+  font-family: Tahoma, sans-serif;
+  font-size: 64px;
+  font-weight: bold;
+  padding: 20px 60px;
+  border: 3px solid #0d2340;
+  box-shadow: 4px 4px 0 #0d2340;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 20px 0;
+}
+
+.logo-sub {
+  font-size: 14px;
+  color: #2a5a9b;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#whatis {
+  margin-top: 1.75em;
+  text-align: center;
+}
+
+/* ---------- БЛОКИ (BOXES) ---------- */
+.box-outer {
+  border: 1px solid #2a5a9b;
+  zoom: 100%;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  background: #fff;
+}
+
+.boxbar {
+  padding-left: 0.5em;
+  line-height: 2em;
+  background: #2a5a9b;
+  color: #fff;
+  position: relative;
+}
+
+.boxcontent {
+  padding: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0;
+  line-height: 130%;
+  font-size: 93%;
+  color: #1a3a6b;
+}
+
+/* Announcement */
+#announce {
+  background: #f0f8ff;
+  color: #1a3a6b;
+}
+
+#announce .boxbar {
+  background: #1a3a6b;
+}
+
+#announce .boxcontent {
+  line-height: 1.5em;
+}
+
+/* ---------- ДОСКИ (BOARDS) ---------- */
+#boards {
+  overflow: hidden;
+  margin: 1.5em 0;
+}
+
+#boards .column {
+  float: left;
+  width: 12em;
+  margin-right: 1.5em;
+}
+
+#boards h3 {
+  margin-bottom: 0.5em;
+}
+
+#boards a {
+  color: #1a3a6b;
+}
+
+#boards a:hover {
+  color: #0066cc;
+}
+
+/* ---------- ТРЕДЫ (TRENDING) ---------- */
+#c-threads {
+  text-align: center;
+}
+
+.c-thread {
+  vertical-align: top;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  margin-top: 5px;
+  padding: 5px 0 3px 0;
+  position: relative;
+  width: 175px;
+  max-height: 320px;
+  margin-bottom: 10px;
+}
+
+.c-board {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  color: #1a3a6b;
+}
+
+.c-thread img {
+  border: 1px solid #2a5a9b;
+  display: inline-block;
+}
+
+.c-teaser {
+  margin-bottom: 5px;
+  padding: 0 2px;
+  white-space: pre-line;
+  color: #333;
+}
+
+.fake-thumb {
+  background: #d0e4ff;
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+  border: 1px solid #2a5a9b;
+  color: #1a3a6b;
+  line-height: 125px;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ---------- СТАТИСТИКА ---------- */
+#site-stats .boxcontent {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.stat-cell {
+  display: inline-block;
+  width: 33%;
+  color: #1a3a6b;
+}
+
+/* ---------- ФУТЕР ---------- */
+#ft {
+  clear: both;
+  text-align: center;
+  margin-top: 2em;
+}
+
+#ft ul {
+  display: table;
+  margin: auto;
+  border-top: 1px solid #2a5a9b;
+  width: 750px;
+  padding: 0;
+}
+
+#ft li {
+  display: block;
+  float: left;
+  border: 1px solid #2a5a9b;
+  border-left: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2px;
+  margin-top: -1px;
+  padding-top: 2px;
+  background: #d0e4ff;
+}
+
+#ft li.first {
+  border-left: 1px solid #2a5a9b;
+}
+
+#ft li.current {
+  padding-bottom: 4px;
+  border-top: none;
+  background: #eef5ff;
+}
+
+#ft li.fill {
+  border: 0;
+  padding-bottom: 4px;
+  border-top: 1px solid #2a5a9b;
+  width: 68px;
+  background: #eef5ff;
+}
+
+#ft li a {
+  color: #1a3a6b;
+}
+
+#ft li a:hover {
+  color: #0066cc;
+}
+
+#copyright {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 11px;
+  color: #4a6a9b;
+}
+
+/* ---------- ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ---------- */
+.warning {
+  color: #cc0000;
+}
+
+.top-box {
+  background: #fff;
+}
+
+/* ---------- МЕДИА-ЗАПРОСЫ (МОБИЛЬНЫЕ) ---------- */
+@media all and (max-device-width: 640px) {
+  #doc {
+    min-width: 0;
+    width: auto;
+    padding: 10px;
+  }
+
+  #ft ul {
+    width: auto;
+    border-top: none;
+    line-height: 2;
+    display: block;
+  }
+
+  #ft li {
+    background: inherit;
+    display: inline;
+    float: none;
+    border: none;
+    white-space: nowrap;
+  }
+
+  #ft li.first {
+    border-left: none;
+  }
+
+  #ft li.current {
+    padding-bottom: 4px;
+    border-top: none;
+  }
+
+  #ft li.fill {
+    display: none;
+  }
+
+  #ft li a {
+    color: #1a3a6b;
+    text-decoration: underline;
+  }
+
+  #boards .column {
+    margin-bottom: 25px;
+    float: none;
+    width: auto;
+  }
+
+  .boardlink {
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 5px 10px 5px 0;
+  }
+
+  .logo-1chan {
+    font-size: 40px;
+    padding: 15px 30px;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .c-thread {
+    width: 140px;
+  }
+
+  .fake-thumb {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+  }
+}

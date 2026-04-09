@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1chan · Доска</title>
+  <link rel="stylesheet" href="1chan.main.css">
+  <link rel="stylesheet" href="1chan.extra.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- reCAPTCHA -->
+  <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+  <style>
+    /* Дополнительные стили для крупных ID */
+    .thread-id-large {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a3a6b;
+      background: #eef5ff;
+      padding: 4px 10px;
+      border: 2px solid #2a5a9b;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .board-header {
+      background: linear-gradient(135deg, #1a3a6b 0%, #2a5a9b 100%);
+      color: #fff;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border: 2px solid #0d2340;
+      box-shadow: 4px 4px 0 #0d2340;
+    }
+    .board-header h1 {
+      color: #fff;
+      font-size: 32px;
+      margin: 0;
+    }
+    .board-header p {
+      margin: 5px 0 0;
+      opacity: 0.9;
+    }
+    .thread-card-board {
+      border: 2px solid #2a5a9b;
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 3px 3px 0 rgba(26, 58, 107, 0.15);
+    }
+    .thread-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #2a5a9b;
+    }
+    .thread-comment {
+      background: #f0f8ff;
+      padding: 12px;
+      border-left: 4px solid #2a5a9b;
+      margin: 10px 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .reply-count {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #0066cc;
+      cursor: pointer;
+    }
+    .reply-count:hover {
+      text-decoration: underline;
+    }
+    .replies-container {
+      margin-top: 15px;
+      padding-left: 20px;
+      border-left: 3px solid #2a5a9b;
+      display: none;
+    }
+    .replies-container.show {
+      display: block;
+    }
+    .single-reply {
+      background: #fff8f0;
+      margin: 8px 0;
+      padding: 8px 12px;
+      border-left: 3px solid #0066cc;
+    }
+  </style>
+</head>
+<body>
+<div id="doc">
+  <!-- HEADER -->
+  <div id="hd" class="center">
+    <div id="logo-fp">
+      <a href="index.html" style="text-decoration: none;">
+        <div class="logo-1chan">1CHAN</div>
+      </a>
+      <div class="logo-sub">синий форум</div>
+    </div>
+  </div>
+
+  <!-- ИНФОРМАЦИЯ О ДОСКЕ -->
+  <div id="boardInfo" class="board-header">
+    <h1 id="boardName">/b/ — Random</h1>
+    <p id="boardDesc">Загрузка...</p>
+  </div>
+
+  <!-- НАВИГАЦИЯ -->
+  <div style="margin-bottom: 20px;">
+    <a href="index.html" class="btn">← На главную</a>
+    <a href="#" id="catalogLink" class="btn">📋 Каталог</a>
+    <button id="refreshBtn" class="btn">🔄 Обновить</button>
+    <span id="syncStatus" style="margin-left: 15px; font-size: 12px; color: #4a6a9b;"></span>
+  </div>
+
+  <!-- ФОРМА СОЗДАНИЯ ТРЕДА -->
+  <div class="box-outer" style="margin-bottom: 25px;">
+    <div class="boxbar"><strong>📝 Новый тред</strong></div>
+    <div class="boxcontent">
+      <form id="newThreadForm">
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 80px;">Тема:</td>
+            <td><input type="text" id="threadSubject" placeholder="Без темы" style="width: 100%; max-width: 400px;"></td>
+          </tr>
+          <tr>
+            <td>Имя:</td>
+            <td><input type="text" id="threadName" placeholder="Аноним" style="width: 200px;"></td>
+          </tr>
+          <tr>
+            <td>Комментарий:</td>
+            <td><textarea id="threadComment" rows="4" placeholder="Текст треда..." style="width: 100%; max-width: 500px;" required></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div style="margin: 10px 0;">
+                <div class="g-recaptcha" data-sitekey="6Ldzwq4sAAAAACPSqVScyDXHTyaV3wUPvnyOuukq"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit" class="btn" style="padding: 8px 20px;">Создать тред</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div id="threadsContainer"></div>
+
+  <div id="ft">
+    <ul>
+      <li class="first"><a href="index.html">Главная</a></li>
+      <li><a href="rules.html">Правила</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li class="fill"></li>
+      <li><a href="q/index.html">/q/ — Ошибки</a></li>
+    </ul>
+    <div id="copyright">
+      <p>1chan · синий форум</p>
+    </div>
+  </div>
+</div>
+
+<script src="1chan.boardsystem.js"></script>
+</body>
+</html>

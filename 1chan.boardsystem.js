@@ -1,11 +1,10 @@
 /*!
  * 1chan-board.js — Работа с Google Apps Script
- * Таблица: 1JOR6YunxzIlrGMFgl_iifstE5QBsd9hZ2Ih8x6AfnZ8
  */
 
 (function(){
     // ==================== КОНФИГУРАЦИЯ ====================
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHEcfht5y0283U-4yK9pu2ujzTFd2FawEeG2lEmgsSCNucK8GrwanSqoQIpZPKDJhF/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxItMq92xQbaILarlSSwlZOF8vNxFEIdvASTEFLoMlVPivg_jaLtI3mgAxE__7G9G4t/exec';
     const RECAPTCHA_SITE_KEY = '6Ldzwq4sAAAAACPSqVScyDXHTyaV3wUPvnyOuukq';
     
     // Получаем доску из URL (?brd=a)

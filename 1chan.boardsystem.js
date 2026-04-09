@@ -5,7 +5,7 @@
 
 (function(){
     // ==================== КОНФИГУРАЦИЯ ====================
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwXdqleEp16z2PwwFwmQO73TjMlIZNe-GOEnwFxAhvVPpzuDBGanBUdw-6RWPmgzHVP/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxHEcfht5y0283U-4yK9pu2ujzTFd2FawEeG2lEmgsSCNucK8GrwanSqoQIpZPKDJhF/exec';
     const RECAPTCHA_SITE_KEY = '6Ldzwq4sAAAAACPSqVScyDXHTyaV3wUPvnyOuukq';
     
     // Получаем доску из URL (?brd=a)
